@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "anthonyshort/map": "*"
+    "anthonyshort/map": "master"
   },
   "development": {
     "component/emitter": "*"
