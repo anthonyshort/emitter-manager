@@ -1,0 +1,17 @@
+{
+  "name": "listener",
+  "repo": "anthonyshort/listener",
+  "description": "Inverse event binding for component-emitter",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "anthonyshort/map": "*"
+  },
+  "development": {
+    "component/emitter": "*"
+  },
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
