@@ -1,6 +1,6 @@
 {
-  "name": "listener",
-  "repo": "anthonyshort/listener",
+  "name": "emitter-manager",
+  "repo": "anthonyshort/emitter-manager",
   "description": "Inverse event binding for component-emitter",
   "version": "0.0.1",
   "keywords": [],
@@ -8,7 +8,8 @@
     "anthonyshort/map": "master"
   },
   "development": {
-    "component/emitter": "*"
+    "component/emitter": "*",
+    "component/assert": "*"
   },
   "license": "MIT",
   "scripts": [
