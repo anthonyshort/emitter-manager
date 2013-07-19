@@ -16,10 +16,17 @@ The manager works very similar to `Emitter` except that `on` and `off` take an a
     var EmitterManager = require('emitter-manager');
     var manager = new EmitterManager();
     var emitter = new Emitter();
+    var emitter2 = new Emitter();
 
     manager.on(emitter, 'foo', function(){
       // do something
     });
+
+    manager.on(emitter2, 'foo', function(){
+      // do something
+    });
+
+    manager.off();
 
 The advantage of managing events this way is that when you destroy an object you can just call `#off` and it will
 remove all event bindings on any objects that is is listening to. You can be specific about the events you want to remove.
@@ -27,6 +34,7 @@ remove all event bindings on any objects that is is listening to. You can be spe
     manager.off();
     manager.off(model);
     manager.off('foo');
+    manager.off('foo', callback);
     manager.off(model, 'foo');
     manager.off(model, 'foo', callback);
 
