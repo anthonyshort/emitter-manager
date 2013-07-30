@@ -79,4 +79,28 @@ describe('Manager', function() {
     assert(count === 2);
   });
 
+  describe('mixin', function(){
+    var obj, em;
+    beforeEach(function(){
+      obj = {};
+      Manager(obj);
+    });
+
+    it('should listen to an emitter', function(){
+      emitter = new Emitter;
+      obj.listenTo(emitter, 'foo', increment);
+      emitter.emit('foo');
+      assert(count === 1);
+    });
+
+    it('should stop listening to an emitter', function(){
+      emitter = new Emitter;
+      obj.listenTo(emitter, 'foo', increment);
+      obj.stopListening(emitter);
+      emitter.emit('foo');
+      assert(count === 0);
+    });
+
+  });
+
 });

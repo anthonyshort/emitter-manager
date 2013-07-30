@@ -1,6 +1,17 @@
 var HashMap = require('map');
 
+function mixin(obj) {
+  obj._eventManager = new Manager();
+  obj.listenTo = function(emitter, type, fn){
+    this._eventManager.on(emitter, type, fn);
+  };
+  obj.stopListening = function(emitter, type, fn){
+    this._eventManager.off(emitter, type, fn);
+  };
+}
+
 function Manager(obj) {
+  if(obj) return mixin(obj);
   this._events = new HashMap();
 }
 
