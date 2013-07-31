@@ -12,6 +12,7 @@ all of the events at once.
 
 The manager works very similar to `Emitter` except that `on` and `off` take an additional parameter, an emitter.
 
+
 ```js
 var EmitterManager = require('emitter-manager');
 var manager = new EmitterManager();
@@ -40,6 +41,17 @@ manager.off('foo', callback);
 manager.off(model, 'foo');
 manager.off(model, 'foo', callback);
 ```
+
+### Methods
+
+```js
+EmitterManager#on(emitter, type, fn, context)
+```
+
+```js
+EmitterManager#off([emitter], [type], [fn])
+```
+
 
 ## License
 
